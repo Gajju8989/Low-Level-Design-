@@ -1,41 +1,46 @@
-🅿️ Parking Lot System – Machine Coding Round
-❓ Problem Statement:
-Design and implement a Parking Lot Service that manages parking slots for vehicles. The system should support basic operations like parking a vehicle, un-parking it, and querying current status. The design should be modular, extensible, and testable.
+# Parking Lot System
 
-📘 Functional Requirements:
-Create Parking Lot:
+## Overview
+This project implements a **Parking Lot Service** that manages parking slots for vehicles. The system supports basic operations such as creating a parking lot, parking vehicles, unparking vehicles, querying the current status, and searching for vehicles by type or registration number.
 
-Create a parking lot with a given number of slots.
+The design is modular, extensible, and testable, providing a foundation for future features like valet parking and reserved slots.
 
-Park Vehicle:
+---
 
-Park a vehicle (car, bike, truck) in the nearest available slot.
+## Functional Requirements
 
-If the parking lot is full, return an appropriate message.
+### 1. Create Parking Lot
+- Initialize a parking lot with a specified number of parking slots.
+- Slots are numbered from 1 to N.
 
-Unpark Vehicle:
+### 2. Park Vehicle
+- Park a vehicle (types supported: **CAR**, **BIKE**, **TRUCK**) in the nearest available slot (lowest slot number).
+- If the parking lot is full, return an appropriate message indicating no slots available.
 
-Remove a vehicle from a given slot.
+### 3. Unpark Vehicle
+- Remove a vehicle from a given slot number, making the slot available for future parking.
 
-Display Status:
+### 4. Display Status
+- Show the parking lot status with:
+  - Slot number
+  - Vehicle registration number
+  - Vehicle type
 
-Show slot number, vehicle number, and vehicle type for all parked vehicles.
+### 5. Search Vehicles
+- Search and list all vehicles of a specific type (e.g., all cars).
+- Search for a vehicle by its registration number and display its slot and details.
 
-Search Vehicles:
+---
 
-Search for vehicles by type (e.g., all cars).
+## Vehicle Attributes
+Each vehicle has the following properties:
+- **registration_number**: Unique vehicle registration ID
+- **color**: Vehicle color
+- **type**: Vehicle type — one of **CAR**, **BIKE**, **TRUCK**
 
-Search for vehicle by registration number.
+---
 
-🛠️ Constraints & Considerations:
-Each vehicle has: registration_number, color, and type (CAR, BIKE, TRUCK).
-
-Slots are filled in the order from 1 to N (lowest available).
-
-Slot assignment is first-come-first-serve.
-
-Design should be scalable and open to extension (e.g., support valet slots, reserved parking, etc.).
-
-Console-based I/O or API-based interface — your choice.
-
-Bonus if you handle concurrency (optional).
+## Constraints & Considerations
+- Slots are allocated on a **first-come-first-serve** basis, filling the lowest available slot number first.
+- The design should be **scalable** and **open to extension**, allowing easy addition of features like valet parking and reserved parking.
+- Bonus: Handle concurrency to allow multiple park/unpark requests safely (optional).
